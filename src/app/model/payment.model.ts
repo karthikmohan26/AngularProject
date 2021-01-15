@@ -1,4 +1,5 @@
 export class Payment {
 
-    lastPaymentAmount: string | undefined;
+    lastPaymentAmount: string | any;
+    policyNumber: string | any;
 }

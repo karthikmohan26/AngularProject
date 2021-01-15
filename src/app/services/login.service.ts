@@ -7,15 +7,16 @@ import {HttpClient} from '@angular/common/http';
 export class LoginService {
 
   baseurl: string ='http://localhost:3000/users/';
-  response: any ;
 
   constructor(private httpClient : HttpClient) { }
 
   getUser(userName: string){
 
-    console.log(userName);
+    console.log("Inside LoginService"+userName);
+    console.log("url"+this.baseurl+userName);
     return this.httpClient.get(this.baseurl+userName);
-    
+    console.log("After Response from Service");
+
     
   }
 }

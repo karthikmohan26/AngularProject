@@ -1,3 +1,4 @@
+import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { PaymentService } from '../services/payment.service';
 
@@ -19,13 +20,13 @@ export class UsersComponent implements OnInit {
   constructor(private svc: PaymentService) { }
 
    
-  ngOnInit(): void {
+  ngOnInit() {
 
     //this.svc.getPaymentDetails("1").
     //subscribe(
       //(response)=>{this.response=response;
   //});
-  //this.lastPaymentAmt="100";
-  //console.log("Payment Amount from API"+this.response.lastPaymentAmount);
+  //console.log("After Payment Service Response");
+  //console.log("Payment Amount"+this.response.lastPaymentAmount);
 }
 }
