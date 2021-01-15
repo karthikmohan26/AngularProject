@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
 
-    alert("Submit Clicked");
+    console.log("Submit Clicked");
     this.svc.getUser(this.userName).
     subscribe(
       (response)=>{this.response=response;}, 
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['user']);
     }
     else {
-    this.router.navigate(['admin']) ;
+    this.router.navigate(['agent']) ;
 
     }
     }
