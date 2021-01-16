@@ -1,5 +1,6 @@
 import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
+import { User } from '../model/login.model';
 import { PaymentService } from '../services/payment.service';
 
 @Component({
@@ -9,24 +10,27 @@ import { PaymentService } from '../services/payment.service';
 })
 export class UsersComponent implements OnInit {
 
-  lastPaymentDate: string ="10/06/2020";
+  lastPaymentDate: string ="";
   lastPaymentAmt  : string ="";
+  policyNumber:string ="";
   nextPaymentDate: string ="11/28/2020";
   nextPaymentAmt:string="$258.75";
   accountBalance: string="$1007.05";
-  policyNumber:string ="46 SBM RQ9167";
-  response: any;
+  response1: any;
   
   constructor(private svc: PaymentService) { }
 
    
   ngOnInit() {
 
-    //this.svc.getPaymentDetails("1").
-    //subscribe(
-      //(response)=>{this.response=response;
-  //});
-  //console.log("After Payment Service Response");
-  //console.log("Payment Amount"+this.response.lastPaymentAmount);
+    this.svc.getPaymentDetails("1").
+    subscribe(
+      (response1)=>{this.response1=response1;
+        this.lastPaymentAmt= this.response1.lastPaymentAmount;
+        this.policyNumber=this.response1.policyNumber;
+        this.lastPaymentDate=this.response1.lastPaymentDate;
+        console.log("Lat Payment Date"+ this.lastPaymentDate);
+      })
+  
 }
 }

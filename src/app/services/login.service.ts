@@ -13,10 +13,7 @@ export class LoginService {
   getUser(userName: string){
 
     console.log("Inside LoginService"+userName);
-    console.log("url"+this.baseurl+userName);
+    console.log("url :"+this.baseurl+userName);
     return this.httpClient.get(this.baseurl+userName);
-    console.log("After Response from Service");
-
-    
   }
 }

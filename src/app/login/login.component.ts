@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
   userName: string ;
   password: string;
   response: any;
-  //user: User;
   error ="";
 
 
@@ -21,7 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(private svc : LoginService, private router: Router) {
     this.userName="";
     this.password="";
-   }
+    }
 
   ngOnInit() {
 
@@ -32,21 +31,23 @@ export class LoginComponent implements OnInit {
 
     console.log("Submit Clicked");
     console.log("Entered user Name is"+this.userName);
-    this.svc.getUser(this.userName).
-    subscribe(
-      (response)=>{this.response=response;}
-    );
-    console.log("Response to component is"+this.response.userName);
-
-    if(this.userName==this.response.userName && this.password==this.response.password && 
-      this.response.role=="User") {
+    let obs= this.svc.getUser(this.userName);
+    obs.subscribe(
+      (response)=>{this.response=response;
+      console.log("Response to Component"+this.response);
+    
+      if(this.userName==this.response.userName && this.password==this.response.password && 
+        this.response.role=="User") {
 
       this.router.navigate(['user']);
     }
     else {
     this.router.navigate(['agent']) ;
-
     }
+  }
+      
+      )
+      
     }
 
   
