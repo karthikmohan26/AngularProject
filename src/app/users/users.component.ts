@@ -13,9 +13,9 @@ export class UsersComponent implements OnInit {
   lastPaymentDate: string ="";
   lastPaymentAmt  : string ="";
   policyNumber:string ="";
-  nextPaymentDate: string ="11/28/2020";
-  nextPaymentAmt:string="$258.75";
-  accountBalance: string="$1007.05";
+  nextPaymentDate: string ="";
+  nextPaymentAmt:string="";
+  accountBalance: string="";
   response1: any;
   
   constructor(private svc: PaymentService) { }
@@ -29,7 +29,9 @@ export class UsersComponent implements OnInit {
         this.lastPaymentAmt= this.response1.lastPaymentAmount;
         this.policyNumber=this.response1.policyNumber;
         this.lastPaymentDate=this.response1.lastPaymentDate;
-        console.log("Lat Payment Date"+ this.lastPaymentDate);
+        this.nextPaymentDate=this.response1.nextPaymentDate;
+        this.nextPaymentAmt=this.response1.nextPaymentAmt;
+        this.accountBalance=this.response1.accountBalance;
       })
   
 }
