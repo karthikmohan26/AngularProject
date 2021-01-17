@@ -8,7 +8,7 @@ import { DateComponent } from './date/date.component';
 import { AgentsComponent } from './agents/agents.component';
 import { LoginComponent } from './login/login.component';
 import { LoginService } from './services/login.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PaymentService } from './services/payment.service';
 
@@ -23,6 +23,7 @@ import { PaymentService } from './services/payment.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpClientModule
   ],

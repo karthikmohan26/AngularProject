@@ -1,19 +1,21 @@
 <div>
-<div class="header">A payment of $ 0.03 has been submitted to this account and is not reflected in the information below.
+<div>A payment of $ 0.03 has been submitted to this account and is not reflected in the information below.
     Submitted payments may take up to 3 days to be processed.
 <div>
-<div>
-Last Payment Date
-{{lastPaymentDate}}</div>
-<div>
+<div class="col-md-4">
+Last Payment Received
+{{lastPaymentDate}}
 {{lastPaymentAmt}}
 </div>
-<div>
-Next Payment Date
+<div class="col-md-4">
+ Next Payment Due
 {{nextPaymentDate}}
 {{nextPaymentAmt}}
 </div>
-<div>
+<div class="col-md-4">
+    Paid to Date
+</div>
+<div class="col-md-4">
 Account Balance
 {{accountBalance}}   
 </div>
@@ -25,6 +27,7 @@ Account Balance
     </div> 
   <h3>Policies on this Account</h3>   
   <b>Business Owners</b>
-  ({{policyNumber}})
+  <div>({{policyNumber}})
+  </div>  
 </div>
 </div>
