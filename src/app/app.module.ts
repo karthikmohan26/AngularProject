@@ -11,6 +11,8 @@ import { LoginService } from './services/login.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PaymentService } from './services/payment.service';
+import { PaymentAcivityComponent } from './payment-acivity/payment-acivity.component';
+import { PaymentActivityService } from './services/paymentActivity.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { PaymentService } from './services/payment.service';
     UsersComponent,
     DateComponent,
     AgentsComponent,
-    LoginComponent
+    LoginComponent,
+    PaymentAcivityComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { PaymentService } from './services/payment.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [LoginService, PaymentService],
+  providers: [LoginService, PaymentService ,PaymentActivityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
