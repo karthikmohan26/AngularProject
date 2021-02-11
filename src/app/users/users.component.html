@@ -1,32 +1,46 @@
 <div>
-<table class="header">A payment of $ 0.03 has been submitted to this account and is not reflected in the information below.
-        Submitted payments may take up to 3 days to be processed.
+        <div class="header">A payment of $ 0.03 has been submitted to this account and is not reflected in the
+                information below.
+                Submitted payments may take up to 3 days to be processed.
+        </div>
+        <br>
+        <div class="container">
+                <div class="col-xs-6">
+                        <div class="row">
+
+                                <div class="col-xs-4">Last Payment Received</div>
+                                <div class="col-xs-2">{{lastPaymentDate}}</div>
+                                <div class="col-xs-1">{{lastPaymentAmt}}</div>
+                        </div>
+                        <div class="row">
+
+                                <div class="col-xs-4"> Next Payment Due</div>
+                                <div class="col-xs-2">{{nextPaymentDate}}</div>
+                                <div class="col-xs-1">{{lastPaymentAmt}}</div>
+                        </div>
+                        <div class="row">
+                                <div class="col-xs-4"> Account Balance</div>
+                                <div class="col-xs-2">{{accountBalance}}</div>
+                </div>
+                <div class="col-xs-6"></div>
+        </div>
+</div>
+
+
+
+
+
+<hr>
+<table>
+
+<app-payment-acivity [userName]="userName"></app-payment-acivity>
+        <!--<tr><a [routerLink]="['/payment']">Payment Activity</a></tr>
+        <tr><a href="">Bill Plans and Schedule</a></tr> -->
 </table>
-<br>  
-<table width="50%">
-<tr>
-<td width="17%">Last Payment Received</td>
-<td width="17%">{{lastPaymentDate}}</td>
-<td width="17%">{{lastPaymentAmt}}</td>
-</tr>
-<tr>
-<td width="17%"> Next Payment Due</td>
-<td width="17%">{{nextPaymentDate}}</td>   
-<td width="17%">{{nextPaymentAmt}}</td> 
-</tr>
-<tr>
-<td width="50%">Paid to Date Account Balance</td>
-<td width="20%">{{accountBalance}}</td>
-</tr> 
-</table> 
-<br>
 <table>
- <tr><a [routerLink]="['/payment']">Payment Activity</a></tr>   
- <tr><a href="">Bill Plans and Schedule</a></tr>
-</table> 
-<table>
-<h3>Policies on this Account</h3>   
-<b>Business Owners</b>
-<tr>({{policyNumber}})
-</tr></table>
-   </div>
+        <h3>Policies on this Account</h3>
+        <b>Business Owners</b>
+        <tr>({{policyNumber}})
+        </tr>
+</table>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PaymentActivityService } from '../services/paymentActivity.service';
 
 @Component({
@@ -11,6 +11,7 @@ export class PaymentAcivityComponent implements OnInit {
   paymentActivityDate:string="";
   paymentActivityAmount :string="";
   response2: any;
+  @Input('userName') userName:string;
 
   constructor(private paymentActivityService: PaymentActivityService) {
     
@@ -19,7 +20,9 @@ export class PaymentAcivityComponent implements OnInit {
 
   ngOnInit() {
 
-    this.paymentActivityService.getPaymentActivityDetails("1").
+    console.log("User Name in Payment Activity"+this.userName)
+
+    this.paymentActivityService.getPaymentActivityDetails(this.userName).
     subscribe(
       (response2)=>{this.response2=response2;
         this.paymentActivityAmount= this.response2.paymentActivityAmount;

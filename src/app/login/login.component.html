@@ -1,10 +1,10 @@
 
 <div class="w3-panel w3-border w3-border-red">
-    <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
        <div class="form-group">
             <!-- Username -->
-            <label for="username">User Name: <span class="lblError">*</span></label>
-           <input type="text" id="username"  class="form-control" formControlName="userName">
+            <label for="userName">User Name: <span class="lblError"></span></label>
+           <input type="text" id="userName"  class="form-control" formControlName="userName">
            </div>
            <div class="form-group">
             <!-- Password -->
@@ -13,7 +13,7 @@
            </div>
            <br>
            <div class="form-group">
-            <button class="btn btn-primary" type="submit" style="width: 55%">
+            <button class="btn btn-primary" type="submit">
             Log In
             </button>
           </div>   

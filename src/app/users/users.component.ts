@@ -17,13 +17,16 @@ export class UsersComponent implements OnInit {
   nextPaymentAmt:string="";
   accountBalance: string="";
   response1: any;
+  userName:string="";
   
   constructor(private svc: PaymentService) { }
 
    
   ngOnInit() {
 
-    this.svc.getPaymentDetails("1").
+    console.log("User Name to User Component" +window.history.state.userName);
+    this.userName=window.history.state.userName;
+    this.svc.getPaymentDetails(this.userName).
     subscribe(
       (response1)=>{this.response1=response1;
         this.lastPaymentAmt= this.response1.lastPaymentAmount;

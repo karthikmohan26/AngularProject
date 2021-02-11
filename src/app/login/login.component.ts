@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../model/login.model';
 import { LoginService } from '../services/login.service';
 import { Router } from '@angular/router';
-import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, Validators, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -15,18 +15,19 @@ export class LoginComponent implements OnInit {
   password: string;
   response: any;
   error ="";
-  logInForm!: FormGroup; //declaring our form variable
+  //user!:User;
+  loginform! : FormGroup ; 
 
  
   constructor(private svc : LoginService, private router: Router) {
   this.userName="";
-  this.password="";
+  this.password="";  
 
   }
 
   ngOnInit() {
 
-    this.logInForm = new FormGroup({
+    this.loginform = new FormGroup({
       userName: new FormControl('',Validators.required),
       password: new FormControl('',Validators.required)
     })
@@ -36,27 +37,31 @@ export class LoginComponent implements OnInit {
   onSubmit() {
 
     console.log("Submit Clicked");
-    this.userName=this.logInForm.get('userName')?.value;
+    this.userName=this.loginform.get('userName')?.value;
+    this.password=this.loginform.get('password')?.value;
     let obs= this.svc.getUser(this.userName);
     obs.subscribe(
-      (response)=>{this.response=response;
-      console.log("After Response to Component"+this.response.userName);
-      console.log("After Response to Component the Login form "+this.logInForm.get('userName')?.value);
-      if(this.logInForm.get('userName')?.value==this.response.userName 
-      && this.logInForm.get('password')?.value==this.response.password && 
+      (data)=>{this.response=data;
+    if(this.userName===this.response.userName 
+      && this.password===this.response.password && 
         this.response.role=="User") {
 
-      this.router.navigate(['user']);
+      this.router.navigate(['user'],{state:{userName:this.userName}});
     }
-    else {
+    else if (this.userName===this.response.userName 
+    && this.password===this.response.password && 
+      this.response.role=="Agent"){
+
     this.router.navigate(['agent']) ;
+    }
+
+    else {
+
+      this.router.navigate(['unAthourized']) ;
     }
   }
       
       )
       
     }
-
-  
-
 }

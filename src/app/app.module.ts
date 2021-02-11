@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PaymentService } from './services/payment.service';
 import { PaymentAcivityComponent } from './payment-acivity/payment-acivity.component';
 import { PaymentActivityService } from './services/paymentActivity.service';
+import { UnathorizedComponent } from './unathorized/unathorized.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PaymentActivityService } from './services/paymentActivity.service';
     DateComponent,
     AgentsComponent,
     LoginComponent,
-    PaymentAcivityComponent
+    PaymentAcivityComponent,
+    UnathorizedComponent
   ],
   imports: [
     BrowserModule,

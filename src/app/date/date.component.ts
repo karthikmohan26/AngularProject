@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DateComponent implements OnInit {
 
-  message : string ="Application is Available from 8 A.M. EST to 8:0 PM EST";
   Date : String = new Date().toDateString();
   
   constructor() { }
