@@ -14,6 +14,9 @@ import { PaymentService } from './services/payment.service';
 import { PaymentAcivityComponent } from './payment-acivity/payment-acivity.component';
 import { PaymentActivityService } from './services/paymentActivity.service';
 import { UnathorizedComponent } from './unathorized/unathorized.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentDueService } from './services/payment.due.service';
+import { AutopayComponent } from './autopay/autopay.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { UnathorizedComponent } from './unathorized/unathorized.component';
     AgentsComponent,
     LoginComponent,
     PaymentAcivityComponent,
-    UnathorizedComponent
+    UnathorizedComponent,
+    PaymentComponent,
+    AutopayComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,7 @@ import { UnathorizedComponent } from './unathorized/unathorized.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [LoginService, PaymentService ,PaymentActivityService],
+  providers: [LoginService, PaymentService ,PaymentActivityService,PaymentDueService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

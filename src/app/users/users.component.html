@@ -1,31 +1,35 @@
-<div>
-        <div class="header">A payment of $ 0.03 has been submitted to this account and is not reflected in the
-                information below.
-                Submitted payments may take up to 3 days to be processed.
-        </div>
-        <br>
-        <div class="container">
-                <div class="col-xs-6">
-                        <div class="row">
-
-                                <div class="col-xs-4">Last Payment Received</div>
-                                <div class="col-xs-2">{{lastPaymentDate}}</div>
-                                <div class="col-xs-1">{{lastPaymentAmt}}</div>
-                        </div>
-                        <div class="row">
-
-                                <div class="col-xs-4"> Next Payment Due</div>
-                                <div class="col-xs-2">{{nextPaymentDate}}</div>
-                                <div class="col-xs-1">{{lastPaymentAmt}}</div>
-                        </div>
-                        <div class="row">
-                                <div class="col-xs-4"> Account Balance</div>
-                                <div class="col-xs-2">{{accountBalance}}</div>
-                </div>
-                <div class="col-xs-6"></div>
-        </div>
+<div class="header">A payment of $ 0.03 has been submitted to this account and is not reflected in the
+        information below.
+        Submitted payments may take up to 3 days to be processed.
 </div>
 
+<div class="container">
+        <div class="col-xs-6">
+                <div class="row">
+
+                        <div class="col-xs-4">Last Payment Received</div>
+                        <div class="col-xs-2">{{lastPaymentDate}}</div>
+                        <div class="col-xs-1">{{lastPaymentAmt}}</div>
+                </div>
+                <div class="row">
+
+                        <div class="col-xs-4"> Next Payment Due</div>
+                        <div class="col-xs-2">{{nextPaymentDate}}</div>
+                        <div class="col-xs-1">{{lastPaymentAmt}}</div>
+                </div>
+                <div class="row">
+                        <div class="col-xs-4"> Account Balance</div>
+                        <div class="col-xs-2">{{accountBalance}}</div>
+                </div>
+        </div>
+        <div class="col-xs-6">
+                <div class="row">
+                <app-payment [userName]="userName"></app-payment>
+                </div>
+        </div>
+
+
+</div>
 
 
 
@@ -33,7 +37,7 @@
 <hr>
 <table>
 
-<app-payment-acivity [userName]="userName"></app-payment-acivity>
+        <app-payment-acivity [userName]="userName"></app-payment-acivity>
         <!--<tr><a [routerLink]="['/payment']">Payment Activity</a></tr>
         <tr><a href="">Bill Plans and Schedule</a></tr> -->
 </table>
@@ -43,4 +47,3 @@
         <tr>({{policyNumber}})
         </tr>
 </table>
-</div>
