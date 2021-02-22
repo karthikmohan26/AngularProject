@@ -16,7 +16,7 @@ export class UsersComponent implements OnInit {
   nextPaymentDate: string ="";
   nextPaymentAmt:string="";
   accountBalance: string="";
-  response1: any;
+  payment: any;
   userName:string="";
   
   constructor(private svc: PaymentService) { }
@@ -28,13 +28,13 @@ export class UsersComponent implements OnInit {
     this.userName=window.history.state.userName;
     this.svc.getPaymentDetails(this.userName).
     subscribe(
-      (response1)=>{this.response1=response1;
-        this.lastPaymentAmt= this.response1.lastPaymentAmount;
-        this.policyNumber=this.response1.policyNumber;
-        this.lastPaymentDate=this.response1.lastPaymentDate;
-        this.nextPaymentDate=this.response1.nextPaymentDate;
-        this.nextPaymentAmt=this.response1.nextPaymentAmt;
-        this.accountBalance=this.response1.accountBalance;
+      (payment)=>{this.payment=payment;
+        this.lastPaymentAmt= this.payment.lastPaymentAmount;
+        this.policyNumber=this.payment.policyNumber;
+        this.lastPaymentDate=this.payment.lastPaymentDate;
+        this.nextPaymentDate=this.payment.nextPaymentDate;
+        this.nextPaymentAmt=this.payment.nextPaymentAmt;
+        this.accountBalance=this.payment.accountBalance;
       })
   
 }

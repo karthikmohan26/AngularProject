@@ -17,6 +17,7 @@ import { UnathorizedComponent } from './unathorized/unathorized.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PaymentDueService } from './services/payment.due.service';
 import { AutopayComponent } from './autopay/autopay.component';
+import { sectionBackGround } from 'src/shared/app.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AutopayComponent } from './autopay/autopay.component';
     PaymentAcivityComponent,
     UnathorizedComponent,
     PaymentComponent,
-    AutopayComponent
+    AutopayComponent,
+    sectionBackGround
   ],
   imports: [
     BrowserModule,

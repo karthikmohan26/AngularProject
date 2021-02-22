@@ -10,8 +10,10 @@ import { PaymentDueService } from '../services/payment.due.service';
 export class PaymentComponent implements OnInit {
 
   @Input('userName') userName:string;
-  response2 :any;
-  paymentRemaining:string='';
+  payment :any;
+  paymentAmt:string='';
+  paymentRemaining:boolean=false;
+
 
   constructor(private paymentDueService: PaymentDueService , private route:Router) {
     
@@ -24,10 +26,9 @@ export class PaymentComponent implements OnInit {
 
     this.paymentDueService.getPaymentDueDetails(this.userName).
     subscribe(
-      (response2)=>{this.response2=response2;
-        this.paymentRemaining= this.response2.paymentDue;
-                
-      })
+      (payment)=>{this.payment=payment;
+        this.paymentAmt= this.payment.paymentDue;
+         })
     
 
 

@@ -13,7 +13,7 @@ const routes: Routes = [
 {path: 'login', component:LoginComponent},
 {path:'',component:LoginComponent},
 {path: 'payment' ,component:PaymentAcivityComponent} ,
-{path: 'unAthourized',component:UnathorizedComponent} ,
+{path: '*',component:UnathorizedComponent} ,
 {path: 'autoPay',component:AutopayComponent}
 ];
 
