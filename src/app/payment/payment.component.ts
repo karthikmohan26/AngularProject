@@ -11,8 +11,8 @@ export class PaymentComponent implements OnInit {
 
   @Input('userName') userName:string;
   payment :any;
-  paymentAmt:string='';
-  paymentRemaining:boolean=false;
+  paymentDue:string='';
+  paymentRemaining:boolean=true;
 
 
   constructor(private paymentDueService: PaymentDueService , private route:Router) {
@@ -27,9 +27,14 @@ export class PaymentComponent implements OnInit {
     this.paymentDueService.getPaymentDueDetails(this.userName).
     subscribe(
       (payment)=>{this.payment=payment;
-        this.paymentAmt= this.payment.paymentDue;
-         })
-    
+        this.paymentDue= this.payment.paymentDue;
+        console.log("Payment Due in Payment "+this.paymentDue);
+        if(this.paymentDue==="0") {
+        this.paymentRemaining=false
+        }
+         }
+         )
+   
 
 
   }

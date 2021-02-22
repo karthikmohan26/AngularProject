@@ -1,9 +1,13 @@
 <div class="container">
 <div class="col-xs-6">
 <h3>Billing Details </h3>
-<div class="row">
-<p>Paid to Date(Your billing account do not have no unpaid bills at this time)</p>
+<div class="row" >
+<p *ngIf="!paymentRemaining;else paymentdue">Paid to Date(Your billing account do not have no unpaid bills at this time)</p>
+<ng-template #paymentdue>
+   <p>You have a Payment Due</p>
+</ng-template>
 </div>
+
 <div class="row">
  <a href="">Make Additonal Payments</a>
     </div>
