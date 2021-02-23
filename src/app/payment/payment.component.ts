@@ -40,8 +40,8 @@ export class PaymentComponent implements OnInit {
   }
 
   setUpAutoPay() {
- 
-    console.log("Button CLicked");
+   
+      console.log("Button CLicked");
     this.route.navigate(['/autoPay']);
 
   }
